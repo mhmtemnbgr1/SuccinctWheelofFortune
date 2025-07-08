@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Succinct Buddy Spinner</title>
+  <link rel="stylesheet" href="Succinct.css" />
+</head>
+<body>
+  <!-- Yazı yağmuru arka planı -->
+  <canvas id="backgroundTextCanvas"></canvas>
+
+  <div class="wheel-container">
+    <!-- Gösterge oku -->
+    <div class="indicator"></div>
+
+    <!-- Çark -->
+    <canvas id="wheelCanvas" width="500" height="500"></canvas>
+    <button id="spinButton">Spin</button>
+  </div>
+
+  <!-- Kazanan görsel ve yazı -->
+  <div id="overlay">
+    <div class="frame">
+      <img id="winnerImage" src="" alt="Winner" />
+      <p id="winnerText">This is your buddy in the Succinct community!</p>
+    </div>
+  </div>
+<audio id="bgMusic" src="Music.mp3" autoplay loop></audio>
+
+  <script src="Succinct.js"></script>
+</body>
+</html>

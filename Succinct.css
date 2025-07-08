@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+#wheelCanvas {
+  background-color: #111;
+  border-radius: 50%;
+  border: 5px solid #ff69b4;
+  z-index: 1;
+}
+
+.wheel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+#spinButton {
+  margin-top: 20px;
+  padding: 12px 28px;
+  font-size: 20px;
+  background-color: #ff69b4;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Aşağıya bakan sabit gösterge oku */
+.indicator {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 25px solid #ff69b4;
+  position: absolute;
+  bottom: calc(50% + 260px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Kazanan görsel overlay */
+#overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+}
+
+#overlay.show {
+  display: flex;
+  animation: fadeInOut 4s ease-in-out forwards;
+}
+
+.frame {
+  padding: 30px;
+  border: 8px solid #ff69b4;
+  border-radius: 20px;
+  background-color: #000;
+  animation: scaleInOut 4s ease-in-out forwards;
+}
+
+#winnerImage {
+  width: 300px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+#winnerText {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+@keyframes scaleInOut {
+  0% { transform: scale(0); opacity: 0; }
+  40% { transform: scale(1.2); opacity: 1; }
+  70% { transform: scale(1); }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Yazı yağmuru arka planı */
+#backgroundTextCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
